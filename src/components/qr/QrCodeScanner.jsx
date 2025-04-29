@@ -82,8 +82,8 @@ export const QrCodeScanner = () => {
     if (result) {
         return (
             <div className={qr_style.result_container}>
-                <h2>Сканирование QR-кода</h2>
-                <h3 style={{ margin: '0 0 15px' }}>QR-код успешно отсканирован:</h3>
+                <h2>Сканирование 2D-кода</h2>
+                <h3 style={{ margin: '0 0 15px' }}>Код успешно отсканирован:</h3>
                 
                 <div className={qr_style.result_text}>
                     {result}
@@ -100,7 +100,7 @@ export const QrCodeScanner = () => {
     }
     return (
         <div style={{ maxWidth: '600px', margin: '0 auto', padding: '10px' }}>
-            <h2>Сканирование QR-кода</h2>
+            <h2>Сканирование 2D-кода</h2>
             {error ? (
                 <div style={{ 
                     padding: '15px', 
@@ -167,21 +167,14 @@ export const QrCodeScanner = () => {
                                 }}
                                 formats={[
                                     'aztec',
-                                    'code_128',
-                                    'code_39',
-                                    'code_93',
-                                    'codabar',
-                                    'databar',
-                                    'databar_expanded',
                                     'data_matrix',
-                                    'ean_13',
-                                    'ean_8',
-                                    'itf',
                                     'qr_code',
-                                    'upc_a',
-                                    'upc_e',
-                                    'linear_codes',
                                     'matrix_codes'
+                                    // Только квадратные 2D-коды поддерживаются:
+                                    // aztec - Ацтекский код (двумерный)
+                                    // data_matrix - Data Matrix (двумерный)
+                                    // qr_code - QR-код (двумерный)
+                                    // matrix_codes - общая категория для матричных кодов
                                 ]}
                                 scanDelay={300}
                                 allowMultiple={false}
