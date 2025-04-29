@@ -1,0 +1,127 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    gap: 20px;
+}
+
+/* Общие стили для ссылок в меню */
+.desktopNav a, .mobileNav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.desktopNav a:hover, .mobileNav a:hover {
+    color: #4CAF50;
+}
+
+/* Десктопное меню */
+.desktopNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    gap: 20px;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Скрываем мобильное меню на десктопе */
+.mobileNav {
+    display: none;
+}
+
+/* Мобильное меню */
+.mobileTopBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0 10px 0 20px;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.homeLink {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.menuButton {
+    background: grey;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    
+}
+
+/* Бургер иконка */
+.burgerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    
+}
+
+.burgerIcon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Анимация бургер иконки при открытии */
+.burgerIcon.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burgerIcon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burgerIcon.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Выпадающее меню для мобильных */
+.mobileLinks {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobileLinks a {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.menuOpen {
+    max-height: 300px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .desktopNav {
+        display: none;
+    }
+    
+    .mobileNav {
+        display: block;
+        width: 100%;
+    }
+}
+
